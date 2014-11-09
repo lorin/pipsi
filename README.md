@@ -13,12 +13,12 @@ pygmentize without making your system painful.
 
 ## How do I get it?
 
-    curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python
+    $ curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python
 
 ## How does it work?
 
-pipsi installs each package into ~/.local/venvs/PGKNAME and then
-symlinks all new scripts into ~/.local/bin.
+pipsi installs each package into `~/.local/venvs/PGKNAME` and then
+symlinks all new scripts into `~/.local/bin`.
 
 ## Installing scripts from a package:
 
@@ -36,11 +36,21 @@ symlinks all new scripts into ~/.local/bin.
 
     $ pipsi list
 
+## Adding other packages to a venv:
+
+Assuming you had previously installed ansible with pipsi:
+
+    $ cd ~/.local/venvs/ansible
+    $ source bin/activate
+    $ pip install docker-py boto
+
 ## How do I get rid of pipsi?
 
     $ pipsi uninstall pipsi
 
-## How do I upgrade pipsi?  With 0.5 and later just do this:
+## How do I upgrade pipsi?
+
+With 0.5 and later just do this:
 
     $ pipsi upgrade pipsi
 
